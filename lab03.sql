@@ -185,37 +185,51 @@ INSERT INTO Orders( ordno, mon, cid, aid, pid, qty, dollars )
 -- SQL statements for displaying example data into the CAP2 database
 -- Connect to your Postgres server and set the active database to CAP2.  Then . . .
 
+--Question 1: List the ordno and dollars are all orders
 select ordno, dollars  
 from orders;
 
+--Question 2: List the name and city of agents named Smith
 select name, city
 from agents
 where name = 'Smith';
 
+
+--Question 3: List the pid, name and priceUSD of products with quantity more than 200,000
 select pid, name, priceUSD
 from products
 where quantity > 200000;
 
+
+--Question 4: List the names and cities of customers in Dallas
 select name, city
 from customers
 where city = 'Dallas';
 
+--Question 5: list the names of agents not in New York and not in Tokyo
+
+
 select name
 from agents
-where city <> 'New York' or city <>'Tokyo';
+where (city != 'Tokyo' and city != 'New York')
+
+--Question 6: List all data for products not in Dallas or Duluth that cost 1$ or more
 
 select *
 from products
-where (city <> 'Dallas' or  city <>'Duluth') and (priceUSD > 1.00);
+where city != 'Dallas' and city != 'Duluth' and priceUSD > 1.00
 
+--Question 7: List all data for orderes in January or May
 select*
 from orders 
 where (mon = 'jan' or mon ='may');
 
+--Question 8: List all data for orders in Feb more thatn 500$
 select*
 from orders
 where (mon = 'feb' and dollars > 500.00);
 
+--Question 9 List all orders from the customer whose cid is c005
 select *
 from orders
 where cid = 'C005';

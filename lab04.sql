@@ -213,7 +213,7 @@ where agents.aid in
 --pids of products ordered through a01, a03, a06:  a01 = p01. a03 = p03, p05, p04, p07. a06 = p03, p01
 --pids of products ordered through a01, a03, ao6 = p01 p03 p04 p05 p06 p07
 
-select pid
+select distinct pid
 from orders
 where aid in(
 
@@ -225,8 +225,10 @@ where cid in (
 	where city = 'Kyoto')
 	
 
-);
---HAVE TO STILL ORDER THIS
+) order by pid desc
+
+
+
 
 --Question3: Get the cids and names of customers who did not place an order through agent a03
 --customers that did not place an order through agent a03 = c004. c005 never placed an order  
@@ -248,22 +250,6 @@ where cid in (
 --Question 4: Get the cids of customers who ordered both p01 and p07
 --customers that ordered p01 and p07 = c001, c006
 
-select cid 
-from orders
-where pid = 'p01';
-
-select cid 
-from orders
-where pid = 'p07';
-
-select cid
-from orders
-where pid = 'p01'
-
-select cid
-from orders 
-where pid = 'p07'
-
 select cid
 from customers
 where cid in
@@ -272,16 +258,10 @@ where cid in
 	where pid = 'p01' or pid = 'p07');
 
 
---HAVE TO FIX LAST LINE
 
 --Question 5: Get the pids of products NOT ordered by any customers who placed any order through agent a05
 --customers that used a05: c001, c002
 --pid of products ordered by c001 and c002 = p06, p07, p03
-
-
-select cid
-from orders
-where aid = 'a05';
 
 
 select pid
@@ -298,28 +278,6 @@ where pid not in (
 --customers that placed orders through a01, a04, a06 = c001, c006, c004
 --name of those customers = Acme, Tiptop, Acme
 --city of those customers = Duluth, Duluth, Kyoto
-
-select aid 
-from agents
-where city = 'New York' OR city = 'Dallas';
-
-select cid
-from orders
-where aid = 'a01' OR aid = 'a04' OR aid = 'a06';
-
-
-select name, discount, city 
-from customers
-where cid in (select cid
-		from orders
-		where aid = 'a01' OR aid = 'a04' OR aid = 'a06');
-
-
-select discount
-from customers
-where cid in (select cid
-		from orders
-		where aid = 'a01' OR aid = 'a04' OR aid = 'a06');
 
 
 select city, discount, name
@@ -346,6 +304,8 @@ where discount in (
 --Question8:Check constraints
 
 /*
+
+
 Check constraints are used to limit certain values to be within a set range. They are good to make sure that no 'bad' data gets entered into a table, row, or column. 
 One main reason to put these inside a database is to make sure that all data entered makes sense within its appropriate row. For example, if there was a table for Products,
 and that table had a row to represent the value of each product. It would make sense to put a check restraint to ensure that each value entered for the price of each individual product
