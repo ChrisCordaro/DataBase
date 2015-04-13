@@ -34,7 +34,7 @@ create table orders(
 );
 
 Create table suppliers( 
-   id text primary key not null,
+   supplierID text primary key not null,
    name text,
    address text,
    postalCode int,
@@ -89,19 +89,19 @@ insert into orders(orderNum, supplierId, SKUnumber, quantity, commenttext, purch
    Values ('5', '5005', '444', 200, 'Some Comments', '09-18-2014');
 
 --Suppliers--
-insert into suppliers(id, name, address,  postalCode, contactInfo, paymentTerms)
+insert into suppliers(supplierID, name, address,  postalCode, contactInfo, paymentTerms)
    values('1001', 'Big Supplier', 'supplier road',  '1010101', 'supplier1@sup.com', 'credit');
 
-insert into suppliers(id, name, address, postalCode, contactInfo, paymentTerms)
+insert into suppliers(supplierID, name, address, postalCode, contactInfo, paymentTerms)
    values('2002', 'Medium Supplier', 'Some Road',  '2020202', 'supplier2@sup.com', 'credit');
 
-insert into suppliers(id, name, address, postalCode, contactInfo, paymentTerms)
+insert into suppliers(supplierID, name, address, postalCode, contactInfo, paymentTerms)
    values('3003', 'Small Supplier', 'Small Road Way',  '3030303', 'supplier3@sup.com', 'credit');
 
-insert into suppliers(id, name, address, postalCode, contactInfo, paymentTerms)
+insert into suppliers(supplierID, name, address, postalCode, contactInfo, paymentTerms)
    values('4004', 'Super Supplier', 'Super Road Way',  '4040404', 'supplier4sup.com', 'credit');
 
-insert into suppliers(id, name, address,  postalCode, contactInfo, paymentTerms)
+insert into suppliers(supplierID, name, address,  postalCode, contactInfo, paymentTerms)
    values('5005', 'Baby Supplier', 'Baby Road Way',  '5050505', 'supplier5@sup.com', 'credit');
 
 
@@ -143,20 +143,6 @@ insert into postalInfo(postalCode, city, state)
 
 insert into postalInfo(postalCode, city, state)
   values ('6060606', 'Kingston', 'New York');
-
-
-
-select quantity
-from clothesForSale
-where SKUnumber = '111';
-
-Select quantity
-from orders
-where SKUnumber = '111';
-
-
-
-
 
 
 
