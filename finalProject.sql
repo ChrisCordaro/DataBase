@@ -684,7 +684,7 @@ create or replace function get_paint_sponsor(char(3), refcursor) returns refcurs
 $$
 declare 
   paintCompany char(3)      := $1;
-  resultset    REFCURSOR := $2;
+  resultset    REFCURSOR    := $2;
 
 begin
 open resultset for
