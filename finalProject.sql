@@ -284,6 +284,9 @@ Insert into people(pid, firstName, lastName)
 Insert into people(pid, firstName, lastName)
     Values('p5008', 'Lauren', 'Kelly');
 
+Insert into people(pid, firstName, lastName)
+    Values('p5009', 'John', 'Johnson');
+
 
 --Teams--
 insert into teams(tid, tName, division, country)
@@ -360,6 +363,28 @@ insert into players(pid, team)
 insert into players(pid, team)
     values('p2008', '2002');
 
+insert into players(pid, team)
+    values('p3001', '3003');
+
+insert into players(pid, team)
+    values('p3002', '3003');
+
+insert into players(pid, team)
+    values('p3003', '3003');
+
+insert into players(pid, team)
+    values('p3004', '3003');
+
+insert into players(pid, team)
+    values('p3005', '3003');
+
+insert into players(pid, team)
+    values('p3006', '3003');
+
+insert into players(pid, team)
+    values('p3007', '3003');
+    
+
 
 --Professional Staff--
 insert into staff(pid, jobTitle)
@@ -370,6 +395,10 @@ insert into staff(pid, jobTitle)
 
 insert into staff(pid, jobTitle)
     Values ('p5008', 'On feild reporter');
+    
+insert into staff(pid, jobTitle)
+    Values ('p5009', 'Head Official');
+
 
 
 --Postal Info--
@@ -476,7 +505,21 @@ insert into team_sponsors(tid, cid)
 insert into team_sponsors(tid, cid)
     VALUES('2002', '116');
 
- 
+ insert into team_sponsors(tid, cid)
+    values('3003', '113');
+    
+ insert into team_sponsors(tid, cid)
+    values('3003', '117');
+
+ insert into team_sponsors(tid, cid)
+    values('3003', '112');
+
+ insert into team_sponsors(tid, cid)
+    values('3003', '111');
+
+    
+
+
 
 --Paint Sponsors--
 insert into paint_sponsors(cid, paintName)
@@ -545,10 +588,16 @@ insert into event_teams(eid, tid)
    values('12345', '2002');
 
 insert into event_teams(eid, tid)
+   values('12345', '3003');
+
+insert into event_teams(eid, tid)
    values('56789', '1001');
 
 insert into event_teams(eid, tid)
    values('56789', '2002');
+
+insert into event_teams(eid, tid)
+   values('56789', '3003');
 
 insert into event_teams(eid, tid)
    values('54321', '1001');
@@ -557,16 +606,25 @@ insert into event_teams(eid, tid)
    values('54321', '2002');
 
 insert into event_teams(eid, tid)
+   values('54321', '3003');
+
+insert into event_teams(eid, tid)
    values('98765', '1001');
 
 insert into event_teams(eid, tid)
    values('98765', '2002');
 
 insert into event_teams(eid, tid)
+   values('98765', '3003');
+
+insert into event_teams(eid, tid)
    values('10101', '1001');
 
 insert into event_teams(eid, tid)
    values('10101', '2002');
+
+
+
 
 
 
